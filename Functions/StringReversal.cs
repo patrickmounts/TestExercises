@@ -48,4 +48,15 @@ public static class ReverseString
         }
         return sb.ToString();
     }
+
+    public static string ReverseStringStack(string s)
+    {
+        Stack<char> ssr = new Stack<char>(s.Length);
+        foreach (char c in s)
+            ssr.Push(c);
+        string revString = null;
+        foreach (char c in s)
+            revString += ssr.Pop();
+        return revString;
+    }
 }
