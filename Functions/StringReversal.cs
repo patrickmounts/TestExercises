@@ -36,15 +36,16 @@ public static class ReverseString
         string sr = s.Aggregate(new StringBuilder(), (x, y) => x.Insert(0, y)).ToString();
         return sr;
     }
+
     public static string ReverseStringFor(string s)
     {
         int index = s.Length - 1;
-        string sr = "";
+        StringBuilder sb = new StringBuilder();
 
         for (int i = index; index >= 0; index--)
         {
-            sr = sr + (s.Substring(index, 1));
+            sb.Append(s.Substring(index, 1));
         }
-        return sr;
+        return sb.ToString();
     }
 }
